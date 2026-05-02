@@ -59,11 +59,12 @@ type ModuleConfig = {
   cards: ModuleCard[];
 };
 
-const heroVideo = '/assets/14881421_1080_1920_60fps.mp4';
+const heroVideo = (import.meta as any).env?.VITE_HERO_VIDEO_URL || '/assets/14881421_1080_1920_60fps.mp4';
 const crowdVideo = '/assets/14881421_1080_1920_60fps.mp4';
 const retailVideo = '/assets/14922381_1080_1920_30fps.mp4';
 const diningVideo = '/assets/14922381_1080_1920_30fps.mp4';
 const attractionVideo = '/assets/14881421_1080_1920_60fps.mp4';
+const placeholderVideo = (import.meta as any).env?.VITE_PLACEHOLDER_VIDEO_URL || retailVideo;
 
 const media = {
   aerial: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mall_of_America_Aerial.jpg',
@@ -376,9 +377,13 @@ const Navigation = ({ activeSection, onNavigate }: { activeSection: string; onNa
       )}
 
       {isXL && (
-        <div className="fixed left-6 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-4">
+        <div className="fixed right-6 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-4">
           {SECTIONS.map((section) => (
-            <button key={section.id} onClick={() => onNavigate(section.id)} className="group relative flex items-center gap-3">
+            <button
+              key={section.id}
+              onClick={() => onNavigate(section.id)}
+              className="group relative flex items-center gap-3 flex-row-reverse"
+            >
               <span
                 className={`block h-12 w-1 rounded-full transition-all duration-300 ${
                   activeSection === section.id ? 'bg-white' : 'bg-white/20 group-hover:bg-white/50'
@@ -386,7 +391,7 @@ const Navigation = ({ activeSection, onNavigate }: { activeSection: string; onNa
               />
               <span
                 className={`whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.32em] transition ${
-                  activeSection === section.id ? 'translate-x-0 text-white opacity-100' : '-translate-x-2 text-white/0 opacity-0'
+                  activeSection === section.id ? 'translate-x-0 text-white opacity-100' : 'translate-x-2 text-white/0 opacity-0'
                 }`}
               >
                 {section.label}
@@ -402,7 +407,14 @@ const Navigation = ({ activeSection, onNavigate }: { activeSection: string; onNa
 const HeroSection = ({ onNavigate }: { onNavigate: (id: string) => void }) => (
   <section id="overview" className="relative min-h-screen overflow-hidden bg-ink-950 text-white">
     <div className="absolute inset-0">
-      <video autoPlay muted loop playsInline preload="metadata" poster={media.aerial} className="h-full w-full object-cover opacity-65">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="h-full w-full object-cover opacity-65"
+      >
         <source src={heroVideo} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,194,120,0.26),_transparent_32%),radial-gradient(circle_at_80%_20%,_rgba(255,255,255,0.18),_transparent_28%),linear-gradient(to_bottom,rgba(7,10,15,0.2),rgba(7,10,15,0.9))]" />
@@ -598,7 +610,7 @@ const RetailSection = () => (
 
       <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr]">
         <VideoCard
-          src={retailVideo}
+          src={placeholderVideo}
           poster={media.interior}
           className="min-h-[22rem]"
           caption="Retail becomes a motion story here: bright, active, and easy to understand in a few seconds."

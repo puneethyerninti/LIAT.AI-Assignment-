@@ -35,6 +35,13 @@ npm install
 npm run dev
 ```
 
+## Video Configuration (Vercel-Friendly)
+
+GitHub rejects files larger than 100MB, so large 4K MP4s should be hosted externally and injected via environment variables.
+
+- `VITE_HERO_VIDEO_URL`: hero background video URL (e.g., your hosted `12707958_3840_2160_30fps.mp4`)
+- `VITE_PLACEHOLDER_VIDEO_URL`: optional generic placeholder video URL (e.g., your hosted `14863538_3840_2160_30fps.mp4`)
+
 ## Production Build
 
 ```bash
