@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+.history/
+*.tsbuildinfo
+
+# Large source clips kept locally during exploration, but not needed by the app.
+public/assets/12707958_3840_2160_30fps.mp4
+public/assets/14863538_3840_2160_30fps.mp4
+local-only-assets/
+
+.DS_Store
+Thumbs.db
