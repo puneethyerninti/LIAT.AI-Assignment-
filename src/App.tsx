@@ -21,7 +21,6 @@ import {
   Ticket,
   TramFront,
   Users,
-  UtensilsCrossed,
   X,
 } from 'lucide-react';
 
@@ -673,33 +672,33 @@ const DiningSection = () => (
           src={diningVideo}
           poster={media.interior}
           className="aspect-[4/5] md:row-span-2"
-          caption="Food is not an afterthought here; it keeps the trip longer, warmer, and commercially richer."
+          caption="The lifestyle layer keeps visitors present, spending, and ready for brand moments."
         />
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
-          <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/40">Dining role</div>
-          <div className="mt-4 text-3xl font-display text-cream">The meal is part of the destination story.</div>
-          <p className="mt-4 text-sm leading-7 text-white/70">That matters because dining extends dwell time, creates social content, and gives brand partners a softer entry point into the property.</p>
+          <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/40">Lifestyle role</div>
+          <div className="mt-4 text-3xl font-display text-cream">Hospitality turns a trip into an occasion.</div>
+          <p className="mt-4 text-sm leading-7 text-white/70">When the destination feels like a day out, conversion improves across retail, entertainment, and brand activations. This is the commercial bridge between browsing and buying.</p>
         </div>
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
-          <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/40">Commercial angle</div>
-          <div className="mt-4 text-3xl font-display text-cream">Food, beverage, and lifestyle tenants all feed the same trip.</div>
-          <p className="mt-4 text-sm leading-7 text-white/70">A dining cluster is easier to sell when it sits inside a larger, always-on attraction ecosystem.</p>
+          <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/40">Partner angle</div>
+          <div className="mt-4 text-3xl font-display text-cream">The best moments happen between destinations.</div>
+          <p className="mt-4 text-sm leading-7 text-white/70">Lounges, social zones, and high-comfort dayparts create natural touchpoints for sampling, launches, and sponsor visibility without interrupting the guest flow.</p>
         </div>
       </div>
 
       <div className="order-1 lg:order-2">
         <SectionTitle
           dark
-          eyebrow="Dining and lifestyle"
-          title="Food should feel like a reason to visit, not a reason to leave."
-          summary="For a mall of this scale, dining is a lifestyle lever. It turns a shopping trip into a daypart strategy and gives the sales team another reason to pitch brands on dwell, discovery, and repeat visits."
+          eyebrow="Lifestyle and hospitality"
+          title="Make the destination feel like time well spent."
+          summary="If the property is a city, hospitality is the street life. It adds pacing, comfort, and shareable moments that keep visitors on-site longer and creates cleaner opportunities for premium brands and partners."
         />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {[
-            { label: 'Longer stays', value: 'More dwell', icon: <UtensilsCrossed className="h-5 w-5" /> },
-            { label: 'Content value', value: 'More shareable', icon: <Sparkles className="h-5 w-5" /> },
-            { label: 'Audience mix', value: 'More occasions', icon: <Users className="h-5 w-5" /> },
+            { label: 'Visitor energy', value: 'More dwell', icon: <Users className="h-5 w-5" /> },
+            { label: 'Brand moments', value: 'More activations', icon: <Sparkles className="h-5 w-5" /> },
+            { label: 'Premium cues', value: 'More comfort', icon: <Crown className="h-5 w-5" /> },
           ].map((item) => (
             <div key={item.label} className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5">
               <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.35em] text-white/40">
@@ -714,7 +713,7 @@ const DiningSection = () => (
         <div className="mt-6 rounded-[2rem] border border-white/10 bg-black/30 p-6">
           <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-white/40">Best pitch line</div>
           <p className="mt-4 text-2xl leading-9 text-white/80 md:text-3xl font-display">
-            A great food tenant does not just sell meals. It adds a chapter to the property\'s story and keeps the destination active after the first purchase.
+            The most valuable tenant mix is not just what people buy. It is how the destination makes people want to stay.
           </p>
         </div>
       </div>
