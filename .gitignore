@@ -7,7 +7,6 @@ dist/
 # Large source clips kept locally during exploration, but not needed by the app.
 
 local-only-assets/
-public/assets/*.mp4
 
 .DS_Store
 Thumbs.db
