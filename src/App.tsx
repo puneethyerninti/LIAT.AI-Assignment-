@@ -59,8 +59,8 @@ type ModuleConfig = {
   cards: ModuleCard[];
 };
 
-const heroVideo = (import.meta as any).env?.VITE_HERO_VIDEO_URL || '/assets/14881421_1080_1920_60fps.mp4';
-const crowdVideo = '/assets/14881421_1080_1920_60fps.mp4';
+const heroVideo = (import.meta as any).env?.VITE_HERO_VIDEO_URL || '/assets/12707958_3840_2160_30fps.mp4';
+const crowdVideo = '/assets/14863538_3840_2160_30fps.mp4';
 const retailVideo = '/assets/14922381_1080_1920_30fps.mp4';
 const diningVideo = '/assets/14922381_1080_1920_30fps.mp4';
 const attractionVideo = '/assets/14881421_1080_1920_60fps.mp4';
