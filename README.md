@@ -1,102 +1,114 @@
 # Mall of America Interactive Sales Deck
 
-A browser-based, non-linear sales deck for Mall of America, built for prospective retail tenants, sponsors, brand partners, and event producers.
+An interactive, browser-based sales deck for Mall of America. Built to be screen-shared on live calls or sent as a standalone link that prospects can explore on their own. Think of it as a high-end pitch deck that moves people closer to leasing, sponsorship, or event deals.
 
-The goal is not to make a brochure site. This is a screen-share-ready pitch tool that uses video, data, imagery, modular navigation, and commercial storytelling to make the property feel like a high-value destination platform.
+I chose to build this as a pitch tool, not a brochure website. That means every section exists for a reason: to show value, tell a story, and push toward action.
 
-## Live Deployment
+## Quick Start
 
-Recommended deployment: Vercel or Netlify.
-
-```bash
-npm install
-npm run build
-```
-
-For Vercel, import the repository and use the default Vite settings:
-
-- Build command: `npm run build`
-- Output directory: `dist`
-- Install command: `npm install`
-
-## Tech Stack
-
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- lucide-react
-
-## Local Setup
+### Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Video Configuration (Vercel-Friendly)
+The app will run at `http://localhost:5173`.
 
-GitHub rejects files larger than 100MB, so large 4K MP4s should be hosted externally and injected via environment variables.
-
-- `VITE_HERO_VIDEO_URL`: hero background video URL (e.g., your hosted `12707958_3840_2160_30fps.mp4`)
-- `VITE_PLACEHOLDER_VIDEO_URL`: optional generic placeholder video URL (e.g., your hosted `14863538_3840_2160_30fps.mp4`)
-
-## Production Build
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-## What The Deck Covers
+Output goes to the `dist/` folder.
 
-- Cinematic opening with video-first storytelling
-- Non-linear navigation for self-guided exploration and live sales calls
-- Property scale, location, access, visitor draw, and regional reach
-- Retail leasing story for flagships, anchors, discovery brands, and pop-ups
-- Premium positioning path for elevated retail and private launch moments
-- Dining and lifestyle as dwell-time and occasion-building drivers
-- Attractions and entertainment as the major mega-mall differentiator
-- Events platform for concerts, activations, corporate events, and product launches
-- Expandable modules for leasing, sponsorship, event bookings, and venue concepts
-- Deal-room close that maps the experience to leasing, sponsorship, and event actions
+## Deploying to Vercel (Recommended)
 
-## Product Strategy
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your repository
+3. Vercel will auto-detect it's a Vite project
+4. Set these build settings:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+   - **Install Command:** `npm install`
+5. Add environment variables (see below)
+6. Deploy
 
-Mall of America was selected because it naturally fits the assignment: it is not just a mall, it is a mixed-use destination with retail, attractions, transit, dining, and event potential in one property. The deck is structured so a salesperson can quickly adapt the narrative to different buyer types without leaving the experience.
+That's it. Netlify and other platforms work the same way.
 
-The interface supports two modes of use:
+## Environment Variables
 
-- Screen-share mode: clear navigation, strong visual pacing, and high-impact proof points for a live pitch.
-- Standalone mode: enough narrative context and CTAs for a prospect to understand the opportunity without narration.
+If you're hosting video files externally (which you should—GitHub has a 100MB file limit), add these to your `.env.local` for local dev or to your deployment platform's environment variables:
 
-## Design Decisions
+```
+VITE_HERO_VIDEO_URL=https://your-cdn.com/12707958_3840_2160_30fps.mp4
+VITE_CROWD_VIDEO_URL=https://your-cdn.com/14863538_3840_2160_30fps.mp4
+VITE_RETAIL_VIDEO_URL=https://your-cdn.com/14922381_1080_1920_30fps.mp4
+VITE_DINING_VIDEO_URL=https://your-cdn.com/14922381_1080_1920_30fps.mp4
+VITE_ATTRACTION_VIDEO_URL=https://your-cdn.com/14881421_1080_1920_60fps.mp4
+VITE_PLACEHOLDER_VIDEO_URL=https://your-cdn.com/placeholder.mp4
+```
 
-- Visual direction: luxury editorial meets destination entertainment. The dark cinematic surfaces, ivory type, large-scale video, and restrained chrome are meant to feel premium without becoming generic.
-- Interaction model: non-linear section navigation plus expandable commercial modules, so the viewer can jump directly to leasing, sponsorship, events, or venue logic.
-- Content model: every section is tied to a business action, not just a descriptive story beat.
-- Performance model: the app references the lighter video clips in `public/assets`; larger exploratory clips are excluded from source control through `.gitignore`.
+If you don't provide these URLs, the app falls back to local clips in `public/assets/` (which are included in the repo for demo purposes).
 
-## Assets And Sources
+## What's in the Deck
 
-- Public property facts were informed by publicly available Mall of America information.
-- Public imagery uses Wikimedia Commons file endpoints for Mall of America visuals.
-- Motion backgrounds use locally bundled stock video clips to keep the experience cinematic where property-specific video was limited.
-- AI assistance was used to accelerate concepting, copy direction, layout refinement, and submission documentation.
+- **Opening:** Cinematic video intro that hits you with scale and energy right away
+- **Why Mall of America:** Location, access, visitor numbers, why it's different from a regular mall
+- **Retail:** Different tenant paths—flagships, discovery brands, pop-ups
+- **Premium/Luxury:** Elevated positioning and private moments
+- **Dining & Lifestyle:** Why food and entertainment matter for dwell time
+- **Attractions:** The real differentiator—what makes this a destination
+- **Events:** Positioning the property as a platform for concerts, activations, launches
+- **Modules:** Four expandable sub-decks for leasing, sponsorship, events, venues
+- **Deal Room:** Three clear next steps for different buyer types
 
-## AI Usage
+## Tech Stack
 
-AI was used as a product-building accelerator, not just a code generator:
+- **React 18** + **TypeScript** — type-safe components
+- **Vite** — fast builds, instant HMR
+- **Tailwind CSS** — utility-first styling
+- **Framer Motion** — smooth animations and scroll effects
+- **lucide-react** — clean icon library
 
-- Translated the interview brief into a modular product architecture.
-- Developed the sales narrative across tenant, sponsor, and event partner audiences.
-- Refined the premium visual direction and section pacing.
-- Helped identify submission risks such as performance, deployability, README quality, and action-oriented storytelling.
-- Assisted with implementation, TypeScript cleanup, and build verification.
+## Why These Choices
 
-## Performance Notes
+I picked Vite because it's fast and the build is tiny. React and TypeScript keep the code modular and safe. Tailwind lets me build without a separate CSS file. Framer Motion handles the motion work that makes this feel premium. Everything is production-ready and performant.
 
-The app is designed for a Vite production build and avoids shipping the largest exploratory video files. For a production deployment, keep the ignored large clips out of the repository and deploy only the referenced lightweight assets.
+## Design Notes
+
+I went with a dark, cinematic look—think luxury brand, not generic startup. Large video, restrained typography, plenty of breathing room. The interface gets out of the way so the content can speak.
+
+Navigation is non-linear. You can jump to any section or dive into the modules. A salesperson can customize the flow for their audience; a prospect can explore at their own pace.
+
+## How Assets Are Organized
+
+- **Video clips:** Referenced from environment variables (for external hosting) or fallback to `public/assets/`
+- **Images:** Wikimedia Commons URLs for Mall of America photography
+- **Icons:** lucide-react library (no custom SVGs needed)
+- **Fonts:** Google Fonts (Manrope for body, Cormorant Garamond for display)
+
+Everything is lazy-loaded where possible. The app is designed to feel fast.
+
+## Why Mall of America
+
+It's one of the world's biggest malls and it's genuinely a mixed-use destination. You've got retail, attractions, dining, transit, tourism, and event potential all in one property. That gives the sales story real leverage: it's not just about square footage, it's about being a platform.
+
+## What I'd Do Next
+
+- Connect the CTAs to actual lead capture or CRM handoff
+- Build out the full sub-modules (right now they're expandable architecture waiting to be filled)
+- Source official Mall of America brand video and photography
+- Add analytics to track which sections people spend time in
+- Add a mobile-optimized "one-pager" mode for prospects on phones
+
+## Credits
+
+- Property facts and brand positioning: Mall of America public information
+- Images: Wikimedia Commons (public domain / CC licensed)
+- UI/UX approach: Inspired by luxury brands and high-end pitch decks
+- Development: Built with modern web tooling for speed and clarity
 
 Further optimization with more time:
 
