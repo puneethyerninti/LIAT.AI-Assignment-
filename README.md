@@ -69,7 +69,7 @@ If you don't provide these URLs, the app falls back to local clips in `public/as
 - **React 18** + **TypeScript** — type-safe components
 - **Vite** — fast builds, instant HMR
 - **Tailwind CSS** — utility-first styling
-- **Framer Motion** — smooth animations and scroll effects
+- **Framer Motion** — smooth animations and transition effects
 - **lucide-react** — clean icon library
 
 ## Why These Choices
