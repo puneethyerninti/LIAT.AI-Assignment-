@@ -42,12 +42,12 @@ That's it. Netlify and other platforms work the same way.
 If you're hosting video files externally (which you should—GitHub has a 100MB file limit), add these to your `.env.local` for local dev or to your deployment platform's environment variables:
 
 ```
-VITE_HERO_VIDEO_URL=https://your-cdn.com/12707958_3840_2160_30fps.mp4
-VITE_CROWD_VIDEO_URL=https://your-cdn.com/14863538_3840_2160_30fps.mp4
-VITE_RETAIL_VIDEO_URL=https://your-cdn.com/14922381_1080_1920_30fps.mp4
-VITE_DINING_VIDEO_URL=https://your-cdn.com/14922381_1080_1920_30fps.mp4
-VITE_ATTRACTION_VIDEO_URL=https://your-cdn.com/14881421_1080_1920_60fps.mp4
-VITE_PLACEHOLDER_VIDEO_URL=https://your-cdn.com/placeholder.mp4
+VITE_HERO_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777800858/12707958_3840_2160_30fps_1_ijn5uv.mp4
+VITE_CROWD_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777800838/14863538_3840_2160_30fps_1_ff4aot.mp4
+VITE_RETAIL_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777739662/14922381_1080_1920_30fps_dqlsjr.mp4
+VITE_DINING_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777739662/14922381_1080_1920_30fps_dqlsjr.mp4
+VITE_ATTRACTION_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777739677/14881421_1080_1920_60fps_onqugu.mp4
+VITE_PLACEHOLDER_VIDEO_URL=https://res.cloudinary.com/dzisksq78/video/upload/v1777739662/14922381_1080_1920_30fps_dqlsjr.mp4
 ```
 
 If you don't provide these URLs, the app falls back to local clips in `public/assets/` (which are included in the repo for demo purposes).

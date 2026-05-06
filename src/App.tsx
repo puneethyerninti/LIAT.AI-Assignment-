@@ -62,11 +62,21 @@ type ModuleDefinition = {
   icon: React.ReactNode;
 };
 
-const heroVideo = (import.meta as any).env?.VITE_HERO_VIDEO_URL || '/assets/12707958_3840_2160_30fps.mp4';
-const crowdVideo = (import.meta as any).env?.VITE_CROWD_VIDEO_URL || '/assets/14863538_3840_2160_30fps.mp4';
-const retailVideo = (import.meta as any).env?.VITE_RETAIL_VIDEO_URL || '/assets/14922381_1080_1920_30fps.mp4';
-const diningVideo = (import.meta as any).env?.VITE_DINING_VIDEO_URL || '/assets/14922381_1080_1920_30fps.mp4';
-const attractionVideo = (import.meta as any).env?.VITE_ATTRACTION_VIDEO_URL || '/assets/14881421_1080_1920_60fps.mp4';
+const heroVideo =
+  (import.meta as any).env?.VITE_HERO_VIDEO_URL ||
+  'https://res.cloudinary.com/dzisksq78/video/upload/v1777800858/12707958_3840_2160_30fps_1_ijn5uv.mp4';
+const crowdVideo =
+  (import.meta as any).env?.VITE_CROWD_VIDEO_URL ||
+  'https://res.cloudinary.com/dzisksq78/video/upload/v1777800838/14863538_3840_2160_30fps_1_ff4aot.mp4';
+const retailVideo =
+  (import.meta as any).env?.VITE_RETAIL_VIDEO_URL ||
+  'https://res.cloudinary.com/dzisksq78/video/upload/v1777739662/14922381_1080_1920_30fps_dqlsjr.mp4';
+const diningVideo =
+  (import.meta as any).env?.VITE_DINING_VIDEO_URL ||
+  'https://res.cloudinary.com/dzisksq78/video/upload/v1777739662/14922381_1080_1920_30fps_dqlsjr.mp4';
+const attractionVideo =
+  (import.meta as any).env?.VITE_ATTRACTION_VIDEO_URL ||
+  'https://res.cloudinary.com/dzisksq78/video/upload/v1777739677/14881421_1080_1920_60fps_onqugu.mp4';
 const placeholderVideo = (import.meta as any).env?.VITE_PLACEHOLDER_VIDEO_URL || retailVideo;
 
 const media = {
